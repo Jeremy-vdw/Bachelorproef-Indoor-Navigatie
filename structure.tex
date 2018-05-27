@@ -69,6 +69,15 @@
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 
+%----------------------------------------------------------------------------------------
+%	CUSTOM PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pythonhighlight}
+\usepackage[acronym]{glossaries}
+
 %------------------------------------------------------------------------------
 %	TITLE PAGE
 %------------------------------------------------------------------------------
@@ -575,12 +584,13 @@ addtohook={%
 % Je kan dit aanpassen aan de taal die je zelf het meeste gebruikt in je
 % bachelorproef.
 \newcommand{\codefragment}[2]{ \lstset{%
-  language=java,
+  language=python,
   breaklines=true,
   float=th,
   caption={#2},
   basicstyle=\scriptsize,
   frame=single,
+  captionpos=b,
   extendedchars=\true
 }
 \lstinputlisting{#1}}

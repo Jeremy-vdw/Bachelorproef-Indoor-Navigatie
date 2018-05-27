@@ -44,6 +44,10 @@
 %% Inhoud document
 %%=============================================================================
 
+\makeglossaries
+\newacronym{CNN}{CNN}{Convolutional Neural Network}
+\newacronym{WWDC}{WWDC}{Worldwide Developers Conference}
+\newacronym{API}{API}{Application Programming Interface}
 \begin{document}
 
 %---------- Taalselectie ------------------------------------------------------
@@ -77,6 +81,9 @@
 \listoffigures
 \listoftables
 
+\printglossary[type=\acronymtype, title=Woordenlijst]
+
+
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 % https://www.sharelatex.com/learn/Glossaries
@@ -86,7 +93,9 @@
 \input{inleiding}
 \input{standvanzaken}
 \input{methodologie}
-
+\input{voorbereiding}
+\input{onderzoek}
+\input{onderzoek2}
 % Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
 % vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
 % elke fase in je onderzoek in een apart hoofdstuk bespreken.

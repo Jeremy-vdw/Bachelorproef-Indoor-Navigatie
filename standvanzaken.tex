@@ -36,12 +36,12 @@ Deep learning is een onderdeel van machine learning die gebruikt maakt van algor
 
 Als voorbeeld wordt een analogie uit het dagelijkse leven aangehaald. Een peuter leert wat een kat is door naar dieren te wijzen en het woord kat uit te spreken. De ouder corrigeert de peuter wanneer hij naar een foutief dier wijst. Na verloop van tijd wordt de peuter zich meer en meer bewust van de kenmerken die een kat heeft. Hij bouwt een hiërarchie op van verschillende lagen waarin elk niveau van abstractie gecreeërd wordt met de kennis die  opgenomen is uit de voorgaande laag. Deep learning algoritmes doorgaan hetzelfde proces. Het ontvangt een gegevensset waarvan geweten is of het al dan niet een kat is. Daarna wordt de elke input getransformeerd naar een volgend niveau om zo patronen te herkennen.  In de eerste laag wordt bijvoorbeeld gezocht naar de aan- of afwezigheid van randen op bepaalde locaties in het beeld. In de tweede laag kunnen als voorbeeld vormen gedetecteerd worden zoals oren en poten. Zo wordt de input zodanig getransformeerd totdat het model nauwkeurigheid genoeg is om voorspellingen te doen \autocite{techtarget}.
 
-Het doel van deep learning is de werking van het menselijk brein zo goed mogelijk te reproduceren. Er zijn al heel wat applicaties die gebruikmaken van deep learning algoritmen. Afbeelding- en spraakherkenning zijn de meest voorkomende toepassingen. Maar ook het automatisch inkleuren van zwartwit foto’s en zelfrijdende auto’s maken gebruik van d
+Het doel van deep learning is de werking van het menselijk brein zo goed mogelijk te reproduceren. Er zijn al heel wat applicaties die gebruikmaken van deep learning algoritmen. Afbeelding- en spraakherkenning zijn de meest voorkomende toepassingen. Maar ook het automatisch inkleuren van zwartwit foto’s en zelfrijdende auto’s maken gebruik van dergelijke algoritmen. 
 
 \section{Convolutional Neural Network}
 \label{sec:Convolutional Neural Network}
 
-Een convolutional neural network, afgekort CNN is een supervised deap learning algoritme dat vooral gebruikt wordt voor beeld- en videoherkenning. Ook voor het classificeren van afbeeldingen wordt een CNN gebruikt. Het netwerk krijgt hierbij een afbeelding als input en geeft de waarschijnlijkheid dat de afbeelding tot een klasse behoort terug als resultaat. De input kan hierbij aanzien worden als een drie dimensionale array van pixels. Een afbeelding met een grootte van 20 bij 20 pixels heeft een array van 20 x 20 x 3 pixels. De diepte 3 is omwille van de drie kleurkanalen rood, groen en blauw. Voor elk kanaal is er een twee dimensionale array waarbij elke pixel een waard heeft tussen 0 en 255. Bij een zwart-wit beeld is de diepte vanzelfsprekend gelijk aan 1. In dit netwerk bestaan de verborgen lagen uit een aantal convolutional, nonlinair, pooling en fully connected layers \autocite{brohrer}. Figuur \ref{fig:structuur} geeft de grafische voorstelling hoe een CNN is opgebouwd weer.  
+Een convolutional neural network (\acrshort{CNN}) is een supervised deap learning algoritme dat vooral gebruikt wordt voor beeld- en videoherkenning. Ook voor het classificeren van afbeeldingen wordt een CNN gebruikt. Het netwerk krijgt hierbij een afbeelding als input en geeft de waarschijnlijkheid dat de afbeelding tot een klasse behoort terug als resultaat. De input kan hierbij aanzien worden als een drie dimensionale array van pixels. Een afbeelding met een grootte van 20 bij 20 pixels heeft een array van 20 x 20 x 3 pixels. De diepte 3 is omwille van de drie kleurkanalen rood, groen en blauw. Voor elk kanaal is er een twee dimensionale array waarbij elke pixel een waard heeft tussen 0 en 255. Bij een zwart-wit beeld is de diepte vanzelfsprekend gelijk aan 1. In dit netwerk bestaan de verborgen lagen uit een aantal convolutional, nonlinair, pooling en fully connected layers \autocite{brohrer}. Figuur \ref{fig:structuur} geeft de grafische voorstelling hoe een CNN is opgebouwd weer.  
 \begin{figure}
     \centering
         \includegraphics[width=1\textwidth]{img/convolutional_neural_network.png}
@@ -70,4 +70,24 @@ Pooling, of ook wel subsampling genoemd wordt gebruikt om de dimensie of grootte
 
 \subsection{Fully Connected Layer}
 \label{ssec:Fully Connected Layer}
-Voorgaande verborgen lagen kunnen steeds na elkaar uitgevoerd worden. Aan het eind van het netwerk wordt de fully connected layer toegepast. Deze laag krijgt als input een groep op hoog niveau gefilterde afbeeldingen en bekijkt welke functies het meest overeenkomen met een bepaalde klasse. Het geeft een vector terug met de waarschijnlijkheid dat de afbeelding tot die klasse behoort, per klasse terug \autocite{ujjwalkarn}.
+De drie voorgaande verborgen lagen worden steeds na elkaar uitgevoerd. Aan het eind van het netwerk wordt de fully connected layer of softmax layer toegepast. Deze laag krijgt als input een groep op hoog niveau gefilterde afbeeldingen en bekijkt welke functies het meest overeenkomen met een bepaalde klasse. Het geeft een vector terug met de waarschijnlijkheid dat de afbeelding tot die klasse behoort, per klasse terug. Als het netwerk de grootste waarschijnlijkheid geeft dat een afbeelding een vogel is, dan zal de fully connected layer hoge waarden krijgen voor een feature die een snavel, een vleugel of iets dergelijk herkend \autocite{ujjwalkarn}.
+
+\section{Transfer Learning}
+\label{sec:Transfer Learning}
+
+Om een CNN te ontwikkelen is een grote dataset gepaard met veel tijd nodig. Zelfs met sterke grafische kaarten kan het tot enkele weken duren alvorens het neurale netwerk getraind en voldoende nauwkeurig is. Transfer learning is een techniek die vaak gebruikt wordt om een CNN te ontwikkelen met een eigen kleinere dataset. Bovendien vraagt het toepassen van transfer learning aanzienlijk minder tijd \autocite{datacamp}.
+
+De techniek hergebruikt een neuraal netwerk dat reeds getraind is met een enorme hoeveelheid data. Een veelvoorkomende dataset die wordt gebruikt om een neuraal netwerk te trainen is ImageNet, de set bevat meer dan één miljoen afbeeldingen onderverdeeld onder duizend categorieën. De bekenste modellen die met betreffende dataset getraind werden zijn VGG, ResNet en Inception, waar uit onderzoek wordt vastgesteld dat momenteel Inception v4 het meest nauwkeurige netwerk is \autocite{arxiv}.
+
+Om een eigen classificatie model te ontwikkelen kan het voorgetrainde model gebruikt worden als 'fixed feature extractor' of om te 'finetunen'.
+
+\subsection{Fixed feature extractor}
+\label{ssec:Fixed feature extractor}
+
+Wanneer het voorgetrainde netwerk gebruikt wordt als fixed feature extractor om een nieuw model te creëren, worden alle verborgen lagen behouden in het netwerk. Enkel de bovenste laag, de fully connected layer wordt verwijderd. Daarna wordt het netwerk gebruikt om met behulp van de nieuwe dataset een nieuwe output laag te trainen. Zo kan een netwerk dat auto’s herkent hergebruikt worden om vrachtwagens te herkennen. Deze benadering wordt vooral gebruikt wanneer de nieuwe dataset klein is \autocite{webcourse}.
+
+\subsection{Fine-tuning}
+\label{ssec:Fine-tuning}
+
+Als fine-tuning wordt toegepast op een voorgetraind netwerk dan wordt niet alleen de fully connected layer vervangen, maar worden ook andere lagen aangepast om betere resultaten te bekomen. De eerste lagen die eenvoudige features detecteren zullen worden behouden. Diepere lagen die abstracte features waarnemen worden bijgeschaafd om specifieke features te achterhalen uit de nieuwe dataset. Op een model dat enkele hondenrassen herkend kan fine-tuning worden toegepast om veel meer hondenrassen te onderscheiden. Deze methode wordt meestal gebruikt wanneer er voldoende data beschikbaar is \autocite{cs231n}.
+

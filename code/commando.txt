@@ -1,0 +1,8 @@
+python retrain.py 
+	--bottleneck_dir=klein/bottlenecks 
+	--output_graph=klein/tensorflow_klein.pb 
+	--output_labels=klein/tensorflow_klein_labels.txt 
+	--image_dir /Users/Jeremy/Desktop/Bachelorproef/training/data/klein
+
+
+
