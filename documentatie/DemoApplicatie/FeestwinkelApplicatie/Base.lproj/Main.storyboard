@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V92-8d-BE0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Wolf_Sans_Regular.ttf">
+            <string>WolfSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Scannen-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FeestwinkelApplicatie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-cK-7Lf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-R3-FfF">
+                                <rect key="frame" x="0.0" y="503" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan een product voor meer informatie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zin-sB-dmt">
+                                        <rect key="frame" x="38" y="40" width="322" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87058823529411766" green="0.18431372549019609" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="X8c-Wh-PSL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HWf-R3-FfF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AtT-V8-cWV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HWf-R3-FfF" secondAttribute="trailing" id="Woe-VG-XTC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HWf-R3-FfF" secondAttribute="bottom" id="akK-AZ-7w0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scannen" id="8xv-HS-Z2o"/>
+                    <connections>
+                        <outlet property="previewView" destination="Gta-cK-7Lf" id="DH5-4O-lN8"/>
+                        <segue destination="8ql-6f-mDh" kind="show" identifier="showDetail" id="XuB-Ev-Z2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.2" y="33.733133433283363"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="hCf-L8-lCH">
+            <objects>
+                <viewController id="8ql-6f-mDh" customClass="DetailController" customModule="FeestwinkelApplicatie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JKD-D6-N3o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-nf-HPa">
+                                <rect key="frame" x="24" y="16" width="327" height="22"/>
+                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="19"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.22745098039215686" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PRU2816" translatesAutoresizingMaskIntoConstraints="NO" id="LUB-yh-Bga">
+                                <rect key="frame" x="92.5" y="54" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="KHl-oZ-MC2"/>
+                                    <constraint firstAttribute="height" constant="190" id="hSt-o8-mQh"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pct-nq-asC">
+                                <rect key="frame" x="16" y="296" width="343" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="g3v-AN-AW7"/>
+                                </constraints>
+                                <string key="text">Deze pastel roze gekleurde getoupeerde 'Marie Antoinette' pruik is van goede kwaliteit en heeft lange synthetische haren met krullen.</string>
+                                <color key="textColor" red="0.35294117650000001" green="0.3803921569" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Stock : 8 - Beschikbaar in één maat." translatesAutoresizingMaskIntoConstraints="NO" id="O7S-uw-Hj4">
+                                <rect key="frame" x="16" y="272" width="343" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="BHf-Wx-qTA"/>
+                                </constraints>
+                                <color key="textColor" red="0.35294117650000001" green="0.3803921569" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-YD-UN2">
+                                <rect key="frame" x="0.0" y="360" width="375" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bijhorende producten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-0R-yBW">
+                                        <rect key="frame" x="16" y="8" width="343" height="20"/>
+                                        <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0oY-0R-yBW" firstAttribute="leading" secondItem="Qe4-YD-UN2" secondAttribute="leading" constant="16" id="HCh-c9-BQb"/>
+                                    <constraint firstAttribute="height" constant="36" id="d9e-uM-b33"/>
+                                    <constraint firstItem="0oY-0R-yBW" firstAttribute="centerY" secondItem="Qe4-YD-UN2" secondAttribute="centerY" id="eHm-Lx-F7x"/>
+                                    <constraint firstAttribute="trailing" secondItem="0oY-0R-yBW" secondAttribute="trailing" constant="16" id="kzl-6g-9UR"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RyU-2s-bgM">
+                                <rect key="frame" x="8" y="404" width="359" height="191"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KDK-XF-qUO">
+                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="191"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="LEG83773" translatesAutoresizingMaskIntoConstraints="NO" id="onf-cT-rUf">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="150"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel komt hier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cLc-n3-D43">
+                                                <rect key="frame" x="0.0" y="154" width="175.5" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.1960784314" green="0.2274509804" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 99,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPs-OW-KuF">
+                                                <rect key="frame" x="0.0" y="175.5" width="175.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="13"/>
+                                                <color key="textColor" red="0.86274509799999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pPs-OW-KuF" secondAttribute="trailing" id="6dx-GG-hHq"/>
+                                            <constraint firstItem="cLc-n3-D43" firstAttribute="leading" secondItem="KDK-XF-qUO" secondAttribute="leading" id="E6r-1i-ij8"/>
+                                            <constraint firstItem="pPs-OW-KuF" firstAttribute="leading" secondItem="KDK-XF-qUO" secondAttribute="leading" id="an0-DE-erI"/>
+                                            <constraint firstAttribute="trailing" secondItem="cLc-n3-D43" secondAttribute="trailing" id="xwf-Vr-kgQ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6dA-86-TMn">
+                                        <rect key="frame" x="183.5" y="0.0" width="175.5" height="191"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="LEG85510" translatesAutoresizingMaskIntoConstraints="NO" id="Cew-5y-nDU">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="150"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel komt hier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bYm-a4-hti">
+                                                <rect key="frame" x="0.0" y="154" width="175.5" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.1960784314" green="0.2274509804" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 99,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-RY-Kop">
+                                                <rect key="frame" x="0.0" y="175.5" width="175.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="13"/>
+                                                <color key="textColor" red="0.86274509799999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Hhm-RY-Kop" secondAttribute="trailing" id="4E9-fy-NXS"/>
+                                            <constraint firstItem="bYm-a4-hti" firstAttribute="leading" secondItem="6dA-86-TMn" secondAttribute="leading" id="9yl-cI-iW1"/>
+                                            <constraint firstAttribute="trailing" secondItem="bYm-a4-hti" secondAttribute="trailing" id="dVK-ht-Ye8"/>
+                                            <constraint firstItem="Hhm-RY-Kop" firstAttribute="leading" secondItem="6dA-86-TMn" secondAttribute="leading" id="erI-4s-c3y"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6dA-86-TMn" firstAttribute="width" secondItem="KDK-XF-qUO" secondAttribute="width" id="bjN-KE-3fD"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 99,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxR-CQ-hIQ">
+                                <rect key="frame" x="16" y="252" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Ivu-s3-2KH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="17"/>
+                                <color key="textColor" red="0.86274509799999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O7S-uw-Hj4" firstAttribute="top" secondItem="gxR-CQ-hIQ" secondAttribute="bottom" id="2Ow-R7-iNh"/>
+                            <constraint firstItem="CM2-n3-LEJ" firstAttribute="trailing" secondItem="Qe4-YD-UN2" secondAttribute="trailing" id="3ck-Rl-mqk"/>
+                            <constraint firstItem="CM2-n3-LEJ" firstAttribute="trailing" secondItem="pct-nq-asC" secondAttribute="trailing" constant="16" id="4wh-Jk-pGQ"/>
+                            <constraint firstItem="RyU-2s-bgM" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" constant="8" id="5ck-GP-J4J"/>
+                            <constraint firstItem="O7S-uw-Hj4" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" constant="16" id="6T0-ep-kVQ"/>
+                            <constraint firstItem="pct-nq-asC" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" constant="16" id="7G6-f6-q1m"/>
+                            <constraint firstItem="Qe4-YD-UN2" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" id="A4J-r5-tcm"/>
+                            <constraint firstAttribute="bottom" secondItem="RyU-2s-bgM" secondAttribute="bottom" constant="8" id="CbX-0N-dtR"/>
+                            <constraint firstAttribute="trailing" secondItem="RyU-2s-bgM" secondAttribute="trailing" constant="8" id="Fsa-Vm-zNp"/>
+                            <constraint firstItem="p4T-nf-HPa" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" constant="24" id="HT9-6M-MHc"/>
+                            <constraint firstItem="Qe4-YD-UN2" firstAttribute="top" secondItem="pct-nq-asC" secondAttribute="bottom" constant="8" id="LMa-zm-6MS"/>
+                            <constraint firstItem="LUB-yh-Bga" firstAttribute="top" secondItem="p4T-nf-HPa" secondAttribute="bottom" constant="16" id="M98-47-DeS"/>
+                            <constraint firstItem="LUB-yh-Bga" firstAttribute="centerX" secondItem="JKD-D6-N3o" secondAttribute="centerX" id="TTP-og-bxK"/>
+                            <constraint firstItem="pct-nq-asC" firstAttribute="top" secondItem="O7S-uw-Hj4" secondAttribute="bottom" id="Xei-zz-P94"/>
+                            <constraint firstItem="CM2-n3-LEJ" firstAttribute="trailing" secondItem="gxR-CQ-hIQ" secondAttribute="trailing" constant="16" id="YZ7-go-Y9O"/>
+                            <constraint firstItem="RyU-2s-bgM" firstAttribute="top" secondItem="Qe4-YD-UN2" secondAttribute="bottom" constant="8" id="coE-33-mOr"/>
+                            <constraint firstItem="CM2-n3-LEJ" firstAttribute="trailing" secondItem="p4T-nf-HPa" secondAttribute="trailing" constant="24" id="hjh-5m-TMo"/>
+                            <constraint firstItem="p4T-nf-HPa" firstAttribute="top" secondItem="CM2-n3-LEJ" secondAttribute="top" constant="16" id="jhM-BV-7Ce"/>
+                            <constraint firstItem="CM2-n3-LEJ" firstAttribute="trailing" secondItem="O7S-uw-Hj4" secondAttribute="trailing" constant="16" id="rJ4-wb-n8C"/>
+                            <constraint firstItem="gxR-CQ-hIQ" firstAttribute="top" secondItem="LUB-yh-Bga" secondAttribute="bottom" constant="8" id="u64-m7-gkg"/>
+                            <constraint firstItem="gxR-CQ-hIQ" firstAttribute="leading" secondItem="CM2-n3-LEJ" secondAttribute="leading" constant="16" id="ubV-BQ-ed0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CM2-n3-LEJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="1Tv-Ux-pvA"/>
+                    <connections>
+                        <outlet property="associatedProductImage1" destination="onf-cT-rUf" id="4Tf-NV-5Bb"/>
+                        <outlet property="associatedProductImage2" destination="Cew-5y-nDU" id="bnB-4n-oqy"/>
+                        <outlet property="associatedProductName1" destination="cLc-n3-D43" id="64d-q4-2Zr"/>
+                        <outlet property="associatedProductName2" destination="bYm-a4-hti" id="w6P-MY-hZZ"/>
+                        <outlet property="associatedProductPrice1" destination="pPs-OW-KuF" id="Goa-c2-Hc9"/>
+                        <outlet property="associatedProductPrice2" destination="Hhm-RY-Kop" id="kNW-77-J2L"/>
+                        <outlet property="productDescription" destination="pct-nq-asC" id="o5t-C0-dbd"/>
+                        <outlet property="productImage" destination="LUB-yh-Bga" id="3JK-8D-vP6"/>
+                        <outlet property="productName" destination="p4T-nf-HPa" id="geZ-Dh-eYX"/>
+                        <outlet property="productPrice" destination="gxR-CQ-hIQ" id="23o-LY-4jE"/>
+                        <outlet property="productStockSize" destination="O7S-uw-Hj4" id="aV4-qm-jZD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDk-71-zrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877.5999999999999" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rA6-kr-nnm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V92-8d-BE0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Sdh-sg-80w">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14901960784313725" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="WolfSans-Regular" family="Wolf Sans" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7Nz-EY-ZDd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qq-JL-QAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LEG83773" width="478" height="1200"/>
+        <image name="LEG85510" width="1400" height="2000"/>
+        <image name="PRU2816" width="215" height="300"/>
+    </resources>
+</document>

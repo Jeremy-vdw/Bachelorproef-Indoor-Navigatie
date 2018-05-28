@@ -1,0 +1,51 @@
+%---------- Inleiding ---------------------------------------------------------
+
+\section{Introductie} % The \section*{} command stops section numbering
+\label{sec:introductie}
+
+Als u afgelopen jaar een online aankoop verricht hebt, dan bent u wellicht vertrouwd met de voordelen hiervan. U kon de huidige stock raadplegen, snel een ander kleur van het product kiezen, en mogelijks is uw aankoop zelfs gratis geleverd bij uw thuis. Daarnaast werden u waarschijnlijk bijpassende producten aanbevolen, of er werd getoond welke producten andere klanten kochten. Dit zijn beide toepassingen op de verkooptechniek Cross-selling. 
+Deze techniek laat klanten ook effectief meer kopen, 35\% van de inkomsten van Amazon wordt bekomen door het aanbevelings-algoritme ~\autocite{Amazon}. \\~\\
+Een fysieke winkel wordt op dergelijke algoritmen beperkt. Alleen verkopers kunnen andere producten aanbevelen wanneer ze een bezoeker helpen. Echter wordt niet elke klant bijgestaan door een verkoper. Dit onderzoek gaat na of een mobiele applicatie met product herkenning de fysieke winkel kan helpen om toch soortgelijke technieken toe te passen. Ik wil dit onderzoek zowel op commercieel als technisch vlak uitvoeren. Daarom bestaat het onderzoek uit volgende onderzoeksvragen:  
+\begin{itemize}
+  \item Wat is de nauwkeurigste Custom Image Classifier toepassing?
+  \item Wordt productherkenning als hulpmiddel beschouwd?
+  \item Beïnvloed productherkenning het koopgedrag van de consument?
+\end{itemize}
+\  \\
+Samengevat zal er dus onderzocht worden of productherkenning een meerwaarde biedt aan een fysieke winkel en aan de consument. Op technisch vlak wordt er vooral aangetoond welk Machine Learning framework men best gebruikt bij implementatie. 
+
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{State-of-the-art}
+\label{sec:state-of-the-art}
+
+Onderzoek en vergelijkingen van bestaande Machine Learning frameworks zijn uiteraard al uitgevoerd. Zo zijn “Tensorflow”, “Keras”, “Caffe”, “SciKit-Learn” en andere frameworks al verschillende keren met elkaar vergeleken ~\autocite{Deeplearning}.
+Dit onderzoek zal maar een onderdeel van Machine Learning onderzoeken, namelijk “Image Classification”. Bij elk van opgesomde frameworks is die classificatie mogelijk. In 2017 kwam Apple met de release van “Turi Create”, een framework dat het eenvoudiger maakt om Machine Learning models te ontwikkelen zonder daarin een deskundige te zijn ~\autocite{9to5}. 
+Ook met dit framework is classificatie mogelijk, maar het heeft nog steeds andere toepassingen ook. Hetzelfde jaar bracht Microsoft “Custom Vision” op de markt, een Machine Learning framework dat enkel en alleen het classificeren van afbeeldingen heeft als doelstelling ~\autocite{Microsoft}.
+\\~\\
+Dergelijk onderzoek naar de prestaties van “Turi Create” en “Custom Vision” is nog niet uitgevoerd. Aangezien dit onderzoek niet alleen de focus legt op de nauwkeurigheid van de frameworks, maar ook op de implementatie ervan zal een complex machine learning framework “Tensorflow” vergeleken worden met een eenvoudiger framework “Turi Create”. Daarnaast worden beide frameworks vergeleken met “Custom Vision” die alleen afbeelding classificatie heeft als toepassing. 
+% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
+% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
+%   geen onderdeel is van de zin.
+% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
+%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
+%   ...'')
+
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}
+\label{sec:methodologie}
+
+De eerste onderzoeksvraag gaat de nauwkeurigheid van de 3 frameworks na. Elk framework zal getraind worden op negen producten. Drie gelijkaardige kleine producten, drie gelijkaardige middelgrote producten en drie gelijkaardige grote producten. Daarna zal een demo applicatie gebruikt worden om een product van elke grootte 30 keer te scannen voor alle frameworks. De waarschijnlijkheid dat een framework het product herkend zal worden bijgehouden worden. Om antwoord te geven op de andere onderzoeksvragen zal een andere applicatie ontwikkeld worden. De applicatie zal gebruikmaken van het best scorende framework bij vorige onderzoeksvraag. Het framework zal voldoende getraind worden om een aantal producten zodat klanten van een fysieke winkel producten kunnen gaan scannen. De applicatie zal het product herkennen en hierbij info geven zoals het aantal stuks in voorraad en mogelijke bijproducten. Daarna zal zullen de gebruikers gevraagd worden of ze dit een hulpmiddel vinden en of ze de applicatie in de toekomst nog zullen gebruiken. Verder zal gevraagd worden of hun koopgedrag beïnvloed werd door het weergeven van mogelijke bijproducten/aanbevelingen.  
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwachte resultaten}
+\label{sec:verwachte_resultaten}
+
+Bij de eerste onderzoeksvraag wordt er verwacht dat alle frameworks ongeveer even goed zullen scoren. Op commercieel vlak zal de applicatie vooral aanslaan bij jongere mensen die het gebruik van een smartphone gewoon zijn. Er wordt niet verwacht dat de mobiele applicatie even sterke invloed zal hebben op het koopgedrag van de consument dan een online webwinkel. 
+
+%---------- Verwachte conclusies ----------------------------------------------
+\section{Verwachte conclusies}
+\label{sec:verwachte_conclusies}
+
+Wanneer de verwachte resultaten kloppen, dan mag er geconcludeerd worden dat “Custom Vision” van Microsoft het beste framework is om productherkenning te implementeren in een fysieke winkel. Dit omdat het veel minder complex is om een machine te trainen op het herkennen van een specifiek product. Als deze toepassing aanslaat bij een grote groep klanten, dan zal productherkenning in de fysieke winkel zeker een toekomst hebben. Productherkenning kan worden uitgebreid tot de voedingssector, naast stockinformatie kunnen dan bijvoorbeeld ingrediënten en allergenen worden weergegeven. 
